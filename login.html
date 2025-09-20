@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Voter Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="bolt">⚡</div>
+      <div>BEV</div>
+    </div>
+    <div class="topnav">
+      <button onclick="location.href='index.html'">Home</button>
+      <button onclick="location.href='register.html'">Register</button>
+      <button onclick="location.href='admin.html'">Admin</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="form-card">
+      <h2>Voter Login</h2>
+
+      <!-- Mobile input -->
+      <input class="input" type="tel" placeholder="Enter mobile number (e.g. +91 98xxxxxx)" />
+
+      <!-- Pure HTML/CSS OTP toggle: checkbox is hidden; clicking label acts as Send OTP -->
+      <input id="sendOtpToggle" class="otp-toggle" type="checkbox" />
+      <label for="sendOtpToggle" class="send-label">Send OTP</label>
+
+      <!-- OTP area appears only when toggle is checked -->
+      <div class="otp-area">
+        <div style="text-align:center; color:#6b4b4b; font-size:14px;">Enter the 4-digit code sent to your phone</div>
+
+        <div class="otp-row" aria-label="OTP inputs">
+          <input type="text" maxlength="1" inputmode="numeric" />
+          <input type="text" maxlength="1" inputmode="numeric" />
+          <input type="text" maxlength="1" inputmode="numeric" />
+          <input type="text" maxlength="1" inputmode="numeric" />
+        </div>
+
+        <button class="verify-btn">Verify OTP</button>
+      </div>
+
+      <div style="text-align:center; margin-top:12px;">
+        <button class="pill-btn" onclick="location.href='index.html'">Back to Home</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,249 @@
+:root{
+  --bg1: #f8a7a2;
+  --bg2: #fbd3cf;
+  --primary: #ff6b6b;
+  --primary-dark: #e64545;
+  --card-bg: rgba(255,255,255,0.85);
+  --muted: #6b4b4b;
+  --accent-pale: rgba(255,255,255,0.8);
+  --nav-pill: rgba(255,255,255,0.9);
+  --glass: rgba(255,255,255,0.12);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif; -webkit-font-smoothing:antialiased;}
+body{
+  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  color: #3a2222;
+}
+
+/* Topbar like your screenshot */
+.topbar{
+  height:64px;
+  width:100%;
+  background: rgba(255,255,255,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 28px;
+  border-bottom: 1px solid rgba(0,0,0,0.02);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+  color:var(--primary-dark);
+}
+.brand .bolt{
+  width:34px; height:34px; border-radius:8px;
+  background: linear-gradient(180deg,#ffd6d6,#ffc6c6);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--primary-dark); font-weight:800;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* nav pills on right */
+.topnav {display:flex; gap:10px; align-items:center;}
+.topnav button {
+  background: var(--nav-pill);
+  border: none;
+  padding:8px 14px;
+  border-radius:12px;
+  font-weight:600;
+  color: #4a2a2a;
+  cursor:pointer;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.03);
+}
+.topnav button:hover{ transform: translateY(-1px); }
+
+/* Hero / main */
+.container{ max-width:1150px; margin: 36px auto; padding: 0 20px;}
+.hero{
+  text-align:center;
+  padding: 58px 12px 10px;
+}
+.hero h1{
+  font-size:48px;
+  margin:0;
+  color: #4a2a2a;
+  letter-spacing:0.4px;
+  line-height:1.05;
+  font-weight:800;
+}
+.hero p{ margin:14px 0 22px; color: #684a4a; font-size:16px;}
+
+/* Get started button matching screenshot */
+.cta {
+  display:inline-block;
+  background: var(--primary);
+  color:white;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:700;
+  box-shadow: 0 8px 18px rgba(255,107,107,0.15);
+  border:none;
+  cursor:pointer;
+}
+.cta:hover{ background: var(--primary-dark); transform: translateY(-2px); }
+
+/* cards row */
+.cards-row{
+  margin-top:50px;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  flex-wrap:wrap;
+}
+.card{
+  width:320px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+  border-radius:14px;
+  padding:26px;
+  box-shadow: 0 14px 28px rgba(44,20,20,0.06), inset 0 2px 0 rgba(255,255,255,0.6);
+  text-align:left;
+}
+.card h3{ margin:0 0 8px; color:#6a2f2f; font-size:20px; }
+.card p{ color:#6f4f4f; font-size:14px; line-height:1.45; }
+
+/* pill buttons inside cards */
+.pill-btn{
+  display:block;
+  width:100%;
+  text-align:center;
+  margin-top:12px;
+  padding:10px;
+  background: rgba(255,255,255,0.95);
+  border-radius:999px;
+  border: none;
+  color:#5f3a3a;
+  font-weight:600;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+  cursor:pointer;
+}
+
+/* smaller admin button style */
+.pill-sm{ width:60%; margin:18px auto 0; }
+
+/* center helper */
+.center { display:flex; justify-content:center; align-items:center; }
+
+/* Form / login card style used across pages */
+.form-card{
+  max-width:420px;
+  margin: 36px auto;
+  background: var(--card-bg);
+  border-radius:16px;
+  padding:28px;
+  box-shadow: 0 12px 30px rgba(40,20,20,0.06), inset 0 2px 0 rgba(255,255,255,0.65);
+}
+.form-card h2 { text-align:center; margin:4px 0 16px; color:#4a2a2a; }
+
+/* inputs */
+.input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.06);
+  margin-top:12px;
+  font-size:15px;
+  background: rgba(255,255,255,0.9);
+}
+
+/* OTP UI (pure CSS toggle) */
+.otp-toggle{ display:none; }
+.send-label{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 14px;
+  background: rgba(255,255,255,0.95);
+  border-radius:10px;
+  border: 1px solid rgba(0,0,0,0.04);
+  font-weight:700;
+  color:#6a2f2f;
+  cursor:pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+}
+
+/* hidden by default, show when checkbox is checked */
+.otp-area{ display:none; margin-top:18px; }
+.otp-toggle:checked + .send-label + .otp-area{ display:block; }
+
+/* OTP boxes */
+.otp-row{ display:flex; justify-content:center; gap:10px; margin-top:10px;}
+.otp-row input{
+  width:52px; height:54px; font-size:20px; text-align:center; border-radius:10px;
+  border:1px solid rgba(0,0,0,0.06); background:#fff;
+}
+
+/* verify button */
+.verify-btn{
+  margin-top:18px;
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  background:var(--primary);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 8px 18px rgba(255,107,107,0.12);
+}
+
+/* small screens */
+@media (max-width:880px){
+  .hero h1{ font-size:36px; }
+  .cards-row{ flex-direction:column; gap:16px; align-items:center; }
+  .card{ width:90%; max-width:520px; }
+  .form-card{ margin-top:28px; padding:22px; width:92%; }
+}
+/* About Page Styling */
+.about-hero {
+  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.about-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #222;
+  margin: 0;
+}
+
+.about-image img {
+  max-width: 600px;   /* controls how wide the image can go */
+  height: auto;       /* keeps correct aspect ratio */
+  border-radius: 10px; /* optional rounded corners */
+  display: block;
+  margin: 0 auto;     /* centers the image */
+}
+
+
+.img-placeholder {
+  width: 600px;
+  height: 350px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #444;
+}
+
+.about-content {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+}
+.about-content p {
+  margin-bottom: 18px;
+}
+
